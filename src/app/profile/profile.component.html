@@ -1,0 +1,39 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+    <div class="container-fluid page">
+      <div class="d-flex page__box p-3 mt-2">Profile
+      </div>
+      </div>
+      <div class="page__content shadow p-3 position-relative">
+      <div class="container" *ngIf="currentUser; else loggedOut">
+        <table>
+          <tr>
+              <td><strong>Nom: </strong></td>
+              <td> </td>
+              <td>{{ currentUser.firstName }}</td>
+          </tr>
+          <tr>
+            <td><strong>Prènom: </strong></td>
+            <td> </td>
+            <td>{{ currentUser.lastName }}</td>
+          </tr>
+          <tr>
+            <td><strong>Email: </strong></td>
+            <td></td>
+            <td>{{ currentUser.email }}</td>
+          </tr>
+        </table>
+        </div>
+      </div>
+        
+        <ng-template #loggedOut>
+          Please login.
+        </ng-template>
+</mat-drawer-content>
+  
+  
+</mat-drawer-container>

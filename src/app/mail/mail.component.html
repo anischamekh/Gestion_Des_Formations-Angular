@@ -1,0 +1,54 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+
+      <div class="container-fluid page">
+        <div class="d-flex page__box p-3 mt-2">Liste des emails
+          <div class="example-button-row"> 
+            <button mat-raised-button (click)="openDialog()"><mat-icon>add</mat-icon>
+            Ajouter</button>
+          </div>
+        </div>
+        </div>
+        
+        <div class="page__content shadow p-3 position-relative">
+            <div class="mat-elevation-z8 data-table">
+              <mat-form-field appearance="standard">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" #input>
+              </mat-form-field>
+              <mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+
+                <ng-container matColumnDef="destinaire">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Destinaire </th>
+                  <td mat-cell *matCellDef="let row"> {{row.destinaire}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="objet">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Objet </th>
+                  <td mat-cell *matCellDef="let row"> {{row.objet}} </td>
+                </ng-container>   
+                
+                <ng-container matColumnDef="message">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Message </th>
+                    <td mat-cell *matCellDef="let row"> {{row.message}} </td>
+                  </ng-container>   
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </mat-table>  
+            
+              <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                             showFirstLastButtons 
+                             aria-label="Select page of periodic elements">
+              </mat-paginator>
+            </div>
+          
+        </div>
+    </mat-drawer-content>
+ 
+
+  </mat-drawer-container>

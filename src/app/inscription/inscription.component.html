@@ -1,0 +1,36 @@
+<h1 mat-dialog-title>Ajouter un formateur</h1>
+<div mat-dialog-content>
+    <form [formGroup]="">
+        <mat-form-field appearance="outline">
+            <mat-label>CIN</mat-label>
+            <input formControlName="cin"  type="text" id="cin" name="cin" matInput placeholder="CIN"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Nom</mat-label>
+            <input formControlName="firstName"  type="text" id="firstName" name="firstName" matInput placeholder="Nom"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Prénom</mat-label>
+            <input formControlName="lastName"   type="text" id="lastName" name="lastName" matInput placeholder="Prénom"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>E-mail</mat-label>
+            <input formControlName="email"  type="email"  id="email" name="email" matInput placeholder="E-mail"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Téléphone</mat-label>
+            <input formControlName="tel"  type="text" id="tel" name="tel" matInput placeholder="Téléphone"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Ville</mat-label>
+            <input formControlName="ville"  type="text" id="ville" name="ville" matInput placeholder="Ville"/>
+        </mat-form-field>
+
+        
+        
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Annuler</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" mat-dialog-close (click)="addFormateur()">{{actionBtn}}</button>
+</div>

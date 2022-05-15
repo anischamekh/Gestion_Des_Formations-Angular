@@ -1,0 +1,42 @@
+<h1 mat-dialog-title>Ajouter une formation</h1>
+<div mat-dialog-content>
+    <form [formGroup]="formationForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Titre</mat-label>
+            <input formControlName="titre" id="titre" name="titre" matInput placeholder="Titre"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Description</mat-label>
+            <input formControlName="description" id="description" name="description" matInput placeholder="description"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Date</mat-label>
+            <input matInput type="date" formControlName="date" id="date" name="date"  placeholder="date"/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Thème du formation</mat-label>
+                <mat-select formControlName="theme" name="theme">
+                <mat-option *ngFor="let theme of themes" [value]="theme.id" >
+                    {{theme.codeTheme}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Selectionner un formateur</mat-label>
+                <mat-select formControlName="formateur" name="formateur">
+                <mat-option *ngFor="let user of users" [value]="user.id">
+                    {{user.firstName}}
+                    {{user.lastName}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Annuler</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" mat-dialog-close (click)="addFormation()">{{actionBtn}}</button>
+</div>

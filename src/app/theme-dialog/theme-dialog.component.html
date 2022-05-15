@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>Ajouter une thème</h1>
+<div mat-dialog-content>
+    <form [formGroup]="themeForm">
+        <mat-form-field appearance="outline">
+            <mat-label>Code du thème</mat-label>
+            <input formControlName="codeTheme" type="text" id="codeTheme" name="codeTheme" matInput placeholder="Code du thème"/>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Libellé du thème</mat-label>
+            <input formControlName="libelleTheme" type="text" id="libelleTheme" name="libelleTheme" matInput placeholder="Libellé du thème"/>
+        </mat-form-field>
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Annuler</button>
+    <button style="margin-left: 8px" mat-raised-button color="primary" mat-dialog-close (click)="addTheme()">{{actionBtn}}</button>
+</div>
