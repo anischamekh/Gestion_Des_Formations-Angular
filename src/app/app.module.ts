@@ -39,6 +39,20 @@ import { ProfileComponent } from './profile/profile.component';
 import { MailDialogComponent } from './mail-dialog/mail-dialog.component';
 import { MailComponent } from './mail/mail.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { NgxMatFileInputModule } from '@angular-material-components/file-input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { ParticipantsComponent } from './participants/participants.component';
+import { NgChartsModule } from 'ng2-charts';
+import { HomeHeaderComponent } from './home-header/home-header.component';
+import { HomeFooterComponent } from './home-footer/home-footer.component';
+import { FormationDetailComponent } from './formation-detail/formation-detail.component';
+import { FormationListComponent } from './formation-list/formation-list.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+
+
 
 
 @NgModule({
@@ -60,7 +74,12 @@ import { InscriptionComponent } from './inscription/inscription.component';
     ProfileComponent,
     MailDialogComponent,
     MailComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ParticipantsComponent,
+    HomeHeaderComponent,
+    HomeFooterComponent,
+    FormationDetailComponent,
+    FormationListComponent
   ],
   imports: [
     BrowserModule,
@@ -85,7 +104,13 @@ import { InscriptionComponent } from './inscription/inscription.component';
     MatPaginatorModule,
     MatSortModule,
     MatSelectModule,
-    
+    MatGridListModule,
+    MatCardModule,
+    NgxMatFileInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgChartsModule,
+    NgxPaginationModule
   ],
   providers: [authInterceptorProviders,{
     provide: MatDialogRef,

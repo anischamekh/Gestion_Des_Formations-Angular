@@ -1,0 +1,26 @@
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: white;
+    background-clip: border-box;
+    border: 1 solid black;
+    border-radius: 0;
+}
+.card-title{
+    font-size: 40px;
+    font-weight: bold;
+}
+h3{
+    font-size: 30px;
+    font-weight: bold;
+}
+.img-responsive{
+    border: 1 solid black;
+    padding-top: 3em;
+}
+p{
+    font-size: 20px;
+}

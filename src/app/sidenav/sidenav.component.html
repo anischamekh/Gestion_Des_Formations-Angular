@@ -3,19 +3,23 @@
       <img src="assets/logo.png" alt="Company Logo" class="avatar"/>
     </div>
     <mat-divider></mat-divider>
-  
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/admin">
+      <mat-icon>home</mat-icon> Tableau de bord
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/formation">
+      <mat-icon>school</mat-icon> Formation
+    </a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/theme" >
-      <mat-icon>home</mat-icon> Theme
+      <mat-icon>library_books</mat-icon> Theme du formation
     </a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/formateur">
       <mat-icon>account_box</mat-icon> Formateur
     </a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/formation">
-      <mat-icon>dashboard</mat-icon> Formation
-    </a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/mail">
-      <mat-icon> email</mat-icon> Liste des Emails
+      <mat-icon>email</mat-icon> Liste des Emails
     </a>
-    <a mat-list-item> <mat-icon>edit</mat-icon> Link 5 </a>
-    <a mat-list-item> <mat-icon>edit</mat-icon> Link 6 </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/participants">
+      <mat-icon>people</mat-icon> Liste des Participants
+    </a>
   </mat-nav-list>

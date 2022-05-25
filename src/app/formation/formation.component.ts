@@ -21,7 +21,7 @@ export class FormationComponent implements OnInit {
 
 
   sideBarOpen = true;
-  displayedColumns  = ['titre','description','date','theme','formateur','action'];
+  displayedColumns  = ['titre','description','dateDebut','dateFin','duree','image','lien','etat','theme','formateur','action'];
   dataSource!: MatTableDataSource<any>;
   
 

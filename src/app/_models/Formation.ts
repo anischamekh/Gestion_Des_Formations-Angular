@@ -6,7 +6,12 @@ export class Formation {
         id!: number;
         titre!: String;
         description!: String;
-        date!: Date;
+        dateDebut!: Date;
+        dateFin!: Date;
+        duree!:number;
+        etat!:String;
+        lien!:String;
+        image!:String;
         user!: User;
         theme!: Theme;
 }

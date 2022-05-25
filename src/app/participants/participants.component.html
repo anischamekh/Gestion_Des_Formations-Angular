@@ -1,0 +1,73 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+
+      <div class="container-fluid page">
+        <div class="d-flex page__box p-3 mt-2">Participants
+          <div class="example-button-row"> 
+          </div>
+        </div>
+        </div>
+          
+        <div class="page__content shadow p-3 position-relative">
+            <div class="mat-elevation-z8 data-table">
+              <mat-form-field appearance="standard">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+              </mat-form-field>
+              <table mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+  
+                <ng-container matColumnDef="cin">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Cin </th>
+                    <td mat-cell *matCellDef="let row"> {{row.cin}} </td>
+                  </ng-container>
+
+                <ng-container matColumnDef="email">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> E-mail </th>
+                  <td mat-cell *matCellDef="let row"> {{row.email}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="firstName">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom </th>
+                  <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="lastName">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Prénom </th>
+                  <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="tel">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Numero telephone </th>
+                  <td mat-cell *matCellDef="let row"> {{row.tel}} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="ville">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Ville </th>
+                  <td mat-cell *matCellDef="let row"> {{row.ville}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="formation">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Formation </th>
+                    <td mat-cell *matCellDef="let row"> {{row.formation.titre}} </td>
+                  </ng-container>
+                
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>  
+            
+              <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                             showFirstLastButtons 
+                             aria-label="Select page of periodic elements">
+              </mat-paginator>
+            </div>
+          
+        </div>
+    </mat-drawer-content>
+  
+  
+  </mat-drawer-container>

@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA  } from '@angular/material/dialog';
-import { Mail } from '../_models/mail';
+import { Mail } from '../_models/Mail';
 import { MailService } from '../_services/mail.service';
 
 @Component({
@@ -36,7 +36,7 @@ export class MailDialogComponent implements OnInit {
   
   
   addMail() {
-    if(!this.editData){
+    if(this.editData){
       if(this.mailForm.valid){
         this.mailService.addMail(this.mailForm.value).subscribe
         ({next:(res)=>{alert("Mail envoyé avec succès");

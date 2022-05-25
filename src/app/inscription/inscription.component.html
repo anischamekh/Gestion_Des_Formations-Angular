@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Ajouter un formateur</h1>
 <div mat-dialog-content>
-    <form [formGroup]="">
+    <form [formGroup]="registerForm" >
         <mat-form-field appearance="outline">
             <mat-label>CIN</mat-label>
             <input formControlName="cin"  type="text" id="cin" name="cin" matInput placeholder="CIN"/>
@@ -19,7 +19,7 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Téléphone</mat-label>
-            <input formControlName="tel"  type="text" id="tel" name="tel" matInput placeholder="Téléphone"/>
+            <input formControlName="tel"  type="tel" id="tel" name="tel" matInput placeholder="Téléphone"/>
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Ville</mat-label>
@@ -27,10 +27,9 @@
         </mat-form-field>
 
         
-        
     </form>
 </div>
 <div mat-dialog-actions [align]="'end'">
     <button mat-raised-button color="warn" mat-dialog-close>Annuler</button>
-    <button style="margin-left: 8px;" mat-raised-button color="primary" mat-dialog-close (click)="addFormateur()">{{actionBtn}}</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" mat-dialog-close (click)="addParticipant()">Inscrire</button>
 </div>

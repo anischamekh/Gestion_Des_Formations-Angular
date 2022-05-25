@@ -7,9 +7,13 @@ import { FormationComponent } from './formation/formation.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
-import { RegisterComponent } from './register/register.component';
 import { ThemeComponent } from './theme/theme.component';
 import { MailComponent } from './mail/mail.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { ParticipantsComponent } from './participants/participants.component';
+import { FormationDetailComponent } from './formation-detail/formation-detail.component';
+import { FormationListComponent } from './formation-list/formation-list.component';
+
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,7 +25,11 @@ const routes: Routes = [
   { path: 'formation', component:FormationComponent },
   { path: 'profile', component:ProfileComponent },
   { path: 'mail', component:MailComponent },
-  { path: '', redirectTo: 'login', pathMatch: 'full' }
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'inscrit', component: InscriptionComponent },
+  { path: 'participants', component: ParticipantsComponent },
+  { path: 'formation-details/:id', component: FormationDetailComponent },
+  { path: 'formation-list', component: FormationListComponent },
 ];
 
 @NgModule({

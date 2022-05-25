@@ -1,4 +1,3 @@
-
 :host {
   display: flex;
   flex-direction: column;
@@ -38,10 +37,6 @@ mat-drawer {
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.example-button-row {
-  padding-left: 950px;
-}
-
 .mat-form-field {
   font-size: 14px;
   width: 100%;

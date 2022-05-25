@@ -7,11 +7,33 @@
         </mat-form-field>
         <mat-form-field appearance="outline">
             <mat-label>Description</mat-label>
-            <input formControlName="description" id="description" name="description" matInput placeholder="description"/>
+            <input formControlName="description" id="description" name="description" matInput placeholder="Description"/>
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <mat-label>Date</mat-label>
-            <input matInput type="date" formControlName="date" id="date" name="date"  placeholder="date"/>
+            <mat-label>Date de Debut</mat-label>
+            <input matInput  type="date" formControlName="dateDebut" id="dateDebut" name="dateDebut"  placeholder="Date de Debut"/>
+            <!--<mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>-->
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Date Fin</mat-label>
+            <input matInput type="date" formControlName="dateFin" id="dateFin" name="dateFin"  placeholder="Date de Fin"/>
+            <!--<mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>-->
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Durée</mat-label>
+            <input formControlName="duree" id="duree" name="duree" matInput placeholder="Durée"/>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Image</mat-label>
+            <input formControlName="image" id="image" name="image" matInput placeholder="Image">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Lien</mat-label>
+            <input formControlName="lien" id="lien" name="lien" matInput placeholder="Lien">
         </mat-form-field>
 
         <mat-form-field appearance="outline">
