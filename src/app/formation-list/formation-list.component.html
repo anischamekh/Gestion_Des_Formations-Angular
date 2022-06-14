@@ -33,20 +33,24 @@
               </p>
               <div class="a8 a9">
                 <div class="a8 a9 a39 a2O xl:a3a 2xl:a39 xl:a2A 2xl:a2O a3b a2z a2M dark:a2o dark:a2M">
-                  <div class="a39">
-                    <h4 class="a1b a1R a1h dark:aI a2K">
-                      Date Debut
+                  <div class="a20">
+                    <h4 class="a1b a1R a1h dark:aI a2K text-center">
+                      De:
                     </h4>
-                    <p class="a3c a1S">{{formation.dateDebut}}</p>
+                    <h4 class="a1b a1R a1h dark:aI a2K">
+                      Jusqu'au:
+                    </h4>
                   </div>
                 </div>
-                <div class="a39">
+                <div class="a37">
                   <h4 class="a1b a1R a1h dark:aI a2K">
-                    Date Fin
-                  </h4> 
-                  <p class="a3c a1S">{{formation.dateFin}}</p>
+                    {{formation.dateDebut}}
+                  </h4>
+                  <h4 class="a1b a1R a1h dark:aI a2K">
+                    {{formation.dateFin}}
+                  </h4>
                 </div>
-                <div class="a39">
+                <div class="a35">
                   <button type="button" class="btn btn-primary pull-right" id="pd" [routerLink]="['/formation-details', formation.id]">Plus de détails</button>
                 </div>
               </div>

@@ -13,6 +13,10 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ParticipantsComponent } from './participants/participants.component';
 import { FormationDetailComponent } from './formation-detail/formation-detail.component';
 import { FormationListComponent } from './formation-list/formation-list.component';
+import { EvaluationComponent } from './evaluation/evaluation.component';
+import { AttachementComponent } from './attachement/attachement.component';
+import { FormateurFormationComponent } from './formateur-formation/formateur-formation.component';
+import { EvaluationListComponent } from './evaluation-list/evaluation-list.component';
 
 
 const routes: Routes = [
@@ -30,6 +34,10 @@ const routes: Routes = [
   { path: 'participants', component: ParticipantsComponent },
   { path: 'formation-details/:id', component: FormationDetailComponent },
   { path: 'formation-list', component: FormationListComponent },
+  { path: 'evaluation', component: EvaluationComponent },
+  { path: 'evaluation-list', component: EvaluationListComponent },
+  { path: 'formation-formateur', component: FormateurFormationComponent },
+  { path: 'attachement', component: AttachementComponent }
 ];
 
 @NgModule({

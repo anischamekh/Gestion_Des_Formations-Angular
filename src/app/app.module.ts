@@ -51,6 +51,14 @@ import { HomeFooterComponent } from './home-footer/home-footer.component';
 import { FormationDetailComponent } from './formation-detail/formation-detail.component';
 import { FormationListComponent } from './formation-list/formation-list.component';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { EvaluationComponent } from './evaluation/evaluation.component';
+import { FormateurHeaderComponent } from './formateur-header/formateur-header.component';
+import { FormateurSidenavComponent } from './formateur-sidenav/formateur-sidenav.component';
+import { FormateurFormationComponent } from './formateur-formation/formateur-formation.component';
+import { AttachementComponent } from './attachement/attachement.component';
+import { SalonComponent } from './salon/salon.component';
+import { AttachementDialogComponent } from './attachement-dialog/attachement-dialog.component';
+import { EvaluationListComponent } from './evaluation-list/evaluation-list.component';
 
 
 
@@ -79,7 +87,15 @@ import {NgxPaginationModule} from 'ngx-pagination';
     HomeHeaderComponent,
     HomeFooterComponent,
     FormationDetailComponent,
-    FormationListComponent
+    FormationListComponent,
+    EvaluationComponent,
+    FormateurHeaderComponent,
+    FormateurSidenavComponent,
+    FormateurFormationComponent,
+    AttachementComponent,
+    SalonComponent,
+    AttachementDialogComponent,
+    EvaluationListComponent
   ],
   imports: [
     BrowserModule,

@@ -13,9 +13,15 @@ export class ParticipantService {
 
   constructor(private http: HttpClient) { }
 
+  
   addParticipant(participant: Participant){
     return this.http.post<Participant>(PARTICIPANT_API+'addParticipant',participant);
   }
+  /*
+  addParticipant(participant: Participant, id: any){
+    return this.http.post<Participant>(PARTICIPANT_API+'addParticipant/'+id,participant);
+  }
+  */
 
   public getParticipant(cin: number): Observable<any> {
     return this.http.get(PARTICIPANT_API+'findtheme/'+cin);

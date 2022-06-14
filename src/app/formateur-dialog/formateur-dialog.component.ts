@@ -14,6 +14,7 @@ export class FormateurDialogComponent implements OnInit {
   actionBtn : String = "Ajouter"
   formateurForm!: FormGroup;
   public user!: User[];
+  
   constructor(private formBuilder: FormBuilder, 
               private formateurService: FormateurService, 
               @Inject(MAT_DIALOG_DATA) public editData: any,

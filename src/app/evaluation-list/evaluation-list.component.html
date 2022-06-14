@@ -1,0 +1,118 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+  
+      <div class="container-fluid page">
+        <div class="d-flex page__box p-3 mt-2">Evaluations
+          <div class="example-button-row"> 
+          </div>
+        </div>
+        </div>
+        
+        <div class="page__content shadow p-3 position-relative">
+            <div class="mat-elevation-z8 data-table">
+              <mat-form-field appearance="standard">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+              </mat-form-field>
+              <table mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+  
+                <ng-container matColumnDef="fullName">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom et Prènom </th>
+                  <td mat-cell *matCellDef="let row"> {{row.fullName}} </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="formation">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Formation </th>
+                  <td mat-cell *matCellDef="let row"> {{row.formation.titre}} </td>
+                </ng-container>
+  
+                <ng-container matColumnDef="difficulte">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Difficulté </th>
+                  <td mat-cell *matCellDef="let row"> {{row.difficulte}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="rythme">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Rythme </th>
+                  <td mat-cell *matCellDef="let row"> {{row.rythme}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="attentes">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Attentes </th>
+                  <td mat-cell *matCellDef="let row"> {{row.attentes}}</td>
+                </ng-container>
+            
+                <ng-container matColumnDef="objectifsAtteints">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Objectifs Atteints </th>
+                  <td mat-cell *matCellDef="let row"> {{row.objectifsAtteints}}</td>
+                </ng-container>
+            
+                <ng-container matColumnDef="inscription">
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Difficultés à l'inscription </th>
+                  <td mat-cell *matCellDef="let row">{{row.inscription}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="duree">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Durée </th>
+                    <td mat-cell *matCellDef="let row"> {{row.duree}} </td>
+                  </ng-container>
+            
+                <ng-container matColumnDef="dates"> 
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header> Dates </th>
+                  <td mat-cell *matCellDef="let row"> {{row.dates}}</td>
+                </ng-container>           
+                
+                
+                <ng-container matColumnDef="niveau">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Niveau </th>
+                    <td mat-cell *matCellDef="let row"> {{row.niveau}}</td>
+                  </ng-container>
+              
+                  <ng-container matColumnDef="langageTenu">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Langage Tenu</th>
+                    <td mat-cell *matCellDef="let row">{{row.langageTenu}}</td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="noteFormateur">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Note du formateur </th>
+                      <td mat-cell *matCellDef="let row"> {{row.noteFormateur}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="noteFormation">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Note du formation </th>
+                        <td mat-cell *matCellDef="let row"> {{row.noteFormation}} </td>
+                      </ng-container>
+              
+                  <ng-container matColumnDef="onligneOrPres"> 
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header> Type de la formation </th>
+                    <td mat-cell *matCellDef="let row"> {{row.onligneOrPres}}</td>
+                  </ng-container>  
+            
+                <ng-container matColumnDef="dispensions"> 
+                  <th mat-header-cell *matHeaderCellDef mat-sort-header>Dispensions </th>
+                  <td mat-cell *matCellDef="let row"> {{row.dispensions}}</td>
+                </ng-container>  
+
+                <ng-container matColumnDef="idees">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header>Idées </th>
+                    <td mat-cell *matCellDef="let row"> {{row.idees}} </td>
+                  </ng-container>
+            
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>  
+            
+              <mat-paginator [pageSizeOptions]="[5, 10, 20]"
+                             showFirstLastButtons 
+                             aria-label="Select page of periodic elements">
+              </mat-paginator>
+            </div>
+          
+        </div>
+    </mat-drawer-content>
+  
+  
+  </mat-drawer-container>

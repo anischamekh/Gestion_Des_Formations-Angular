@@ -22,15 +22,14 @@
                         <h3 class="box-title mt-5">Description</h3>
                         <p>{{formation.description}}</p>
                         <h3 class="box-title mt-5">Duree</h3>
-                        <p>{{formation.duree}}</p>
-                        <h3 class="box-title mt-5">Date Debut</h3>
+                        <p>{{formation.duree}} Heures</p>
+                        <h3 class="box-title mt-5">De</h3>
                         <p>{{formation.dateDebut}}</p>
-                        <h3 class="box-title mt-5">Date Fin</h3>
+                        <h3 class="box-title mt-5">Jusqu'au</h3>
                         <p>{{formation.dateFin}}</p>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary " id="pd" (click)="openDialog(formation.id)">Plus de détails</button>
-
+                <button type="button" class="btn btn-lg btn-primary" id="pd" style="float: right;" (click)="openDialog(formation.id)">S'inscrire</button>
             </div>
         </div>
     </div>

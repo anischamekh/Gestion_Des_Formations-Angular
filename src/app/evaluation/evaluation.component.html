@@ -1,0 +1,172 @@
+
+<body>
+  <div class="container">
+    <div class="title text-center">Évaluation</div>
+    <div class="content">
+      <form [formGroup]="evaluationForm">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Nom et Prénom</span>
+            <input type="text" formControlName="fullName" id="fullName" name="fullName" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">A quelle formation avez-vous participé ?</span>
+                <select formControlName="formation" name="formation" class="form-select form-select-sm" aria-label=".form-select-sm example">
+                  <option *ngFor="let formation of formations" [value]="formation.id">
+                      {{formation.titre}}
+                  </option>
+                </select>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Comment évaluez-vous le niveau de difficulté global de la formation ?</span>
+            <select class="form-select form-select-sm" formControlName="difficulte" id="difficulte" name="difficulte" required aria-label=".form-select-sm example">
+              <option selected disabled></option>
+              <option value="Très difficile">Très difficile</option>
+              <option value="Difficile">Difficile</option>
+              <option value="Facile">Facile</option>
+              <option value="Très facile">Très facile</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Qu’avez-vous pensé du rythme de la formation ?</span>
+            <select class="form-select form-select-sm" formControlName="rythme" id="rythme" name="rythme" required aria-label=".form-select-sm example">
+              <option selected disabled></option>
+              <option value="Trop lent">Trop lent</option>
+              <option value="Correct">Correct</option>
+              <option value="Trop intense">Trop intense</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">La formation a-t-elle correspondu à vos attentes ?</span>
+            <select class="form-select form-select-sm" formControlName="attentes" id="attentes" name="attentes" required aria-label=".form-select-sm example">
+              <option selected disabled></option>
+              <option value="Non">Non</option>
+              <option value="Un petit peu">Un petit peu</option>
+              <option value="Oui">Oui</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Selon vous, les objectifs de la formation ont-ils été atteints ?</span>
+            <select class="form-select form-select-sm" formControlName="objectifsAtteints" id="objectifsAtteints" name="objectifsAtteints" required aria-label=".form-select-sm example">
+              <option selected disabled></option>
+              <option value="Non">Non</option>
+              <option value="Un petit peu">Un petit peu</option>
+              <option value="Oui">Oui</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Avez-vous rencontré des difficultés lors de votre inscription à la formation ?</span>
+            <select class="form-select form-select-sm" formControlName="inscription" id="inscription" name="inscription" required aria-label=".form-select-sm example">
+              <option selected disabled></option>
+              <option value="Non">Non</option>
+              <option value="Un petit peu">Un petit peu</option>
+              <option value="Oui">Oui</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Que pensez-vous de la durée de la formation ?</span>
+            <select class="form-select form-select-sm" formControlName="duree" id="duree" name="duree" required aria-label=".form-select-sm example">
+              <option selected disabled></option>
+              <option value="Trop longue">Trop longue</option>
+              <option value="Correcte">Correcte</option>
+              <option value="Trop courte">Trop courte</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Que pensez-vous des dates de la formation ?</span>
+            <select class="form-select form-select-sm" formControlName="dates" id="dates" name="dates" required aria-label=".form-select-sm example">
+              <option selected disabled></option>
+              <option value="Très éloignés">Très éloignés</option>
+              <option value="Bien">Bien</option>
+              <option value="Très proches">Très proches</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Que pensez-vous du niveau du formateur ? </span>
+            <select class="form-select form-select-sm" formControlName="niveau" id="niveau" name="niveau" required aria-label=".form-select-sm example">
+              <option selected disabled></option>
+              <option value="Faible">Faible</option>
+              <option value="Correct">Correct</option>
+              <option value="Élevé">Élevé</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Qu’avez-vous pensé du langage tenu par le formateur ? </span>
+            <select class="form-select form-select-sm" formControlName="langageTenu" id="langageTenu" name="langageTenu" required aria-label=".form-select-sm example">
+              <option selected disabled></option>
+              <option value="Trop simple">Trop simple</option>
+              <option value="Adapté">Adapté</option>
+              <option value="Trop technique">Trop technique</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Sur une échelle de 1 à 10, comment évaluez-vous la formation ?</span>
+            <input type="number" min="0" max="10" formControlName="noteFormation" id="noteFormation" name="noteFormation" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Sur une échelle de 1 à 10, comment évaluez-vous le formateur ?</span>
+            <input type="number" min="0" max="10" formControlName="noteFormateur" id="noteFormateur" name="noteFormateur" required>
+          </div>
+
+          <div class="input-box">
+            <span class="details">A votre avis quelle est la meilleure formation en ligne ou présentielle ?</span>
+            <select class="form-select form-select-sm" formControlName="onligneOrPres" id="onligneOrPres" name="onligneOrPres" required aria-label=".form-select-sm example">
+              <option selected disabled></option>
+              <option value="Formation en ligne">Formation en ligne</option>
+              <option value="Formation présentielle">Formation présentielle</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Quelle formation souhaitez-vous que nous dispensions ?</span>
+            <input type="text" formControlName="dispensions" id="dispensions" name="dispensions">
+          </div>
+
+          <div class="input-box">
+            <span class="details">Avez-vous des idées pour nous aider à nous améliorer ?</span>
+            <input type="text" formControlName="idees" id="idees" name="idees">
+          </div>
+        </div>
+        <!--
+        <div class="gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          <label for="dot-3">
+            <span class="dot three"></span>
+            <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+      -->
+        <div class="button">
+          <input type="submit" (click)="addEvaluation()" value="Soumettre votre évaluation">
+          <button type="submit" (click)="addEvaluation()">Soumettre votre évaluation</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
