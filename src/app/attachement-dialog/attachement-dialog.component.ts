@@ -1,5 +1,9 @@
 import { Component, Inject, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+=======
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { FormationDialogComponent } from '../formation-dialog/formation-dialog.component';
 import { Formation } from '../_models/Formation';
@@ -16,8 +20,11 @@ export class AttachementDialogComponent implements OnInit {
 
   formations: Formation[] = [];
   docForm!: FormGroup;
+<<<<<<< HEAD
   currentFileUploadRecto?: File;
   formDataVerso: FormData = new FormData();
+=======
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
 
   constructor(private formBuilder: FormBuilder, 
               private formationService: FormationService,
@@ -27,7 +34,11 @@ export class AttachementDialogComponent implements OnInit {
 
   ngOnInit(): void {
     this.docForm = this.formBuilder.group({
+<<<<<<< HEAD
       fileData:new FormControl('', [Validators.required]),
+=======
+      fileData:['',Validators.required],
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
       formation:['',Validators.required]
     });
     
@@ -42,6 +53,7 @@ export class AttachementDialogComponent implements OnInit {
   addFile() {
       if(this.docForm.valid){
           let docRequest=new UploadedFile();
+<<<<<<< HEAD
           //docRequest.fileData=this.docForm.get('fileData')?.value;
   
           let fort=new Formation();
@@ -56,15 +68,31 @@ export class AttachementDialogComponent implements OnInit {
           
         this.uploadedFileService.addFile(this.formDataVerso).subscribe
         ({next:(res)=>{alert("Document ajouté avec succès");
+=======
+          docRequest.fileData=this.docForm.get('fileData')?.value;
+
+          let fort=new Formation();
+          fort.id=this.docForm.get('formation')?.value;
+          docRequest.formation=fort;
+         console.log('this.formationForm.value  ***'+docRequest)
+          
+        this.uploadedFileService.addFile(this.docForm.value).subscribe
+        ({next:(res)=>{alert("Formateur ajouté avec succès");
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
           this.docForm.reset();
           this.dialogRef.close('save');
         },
         error:()=>{
+<<<<<<< HEAD
           alert("erreur lors de l'ajout du document")
+=======
+          alert("erreur lors de l'ajout du formateur")
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
         }
         })
       }
     }
+<<<<<<< HEAD
 
     onFileRectoChange(event:any) {
       this.currentFileUploadRecto = <File>event.target.files[0];
@@ -87,4 +115,6 @@ export class AttachementDialogComponent implements OnInit {
   }
   */
     
+=======
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
 }

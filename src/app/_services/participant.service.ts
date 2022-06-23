@@ -17,10 +17,16 @@ export class ParticipantService {
   addParticipant(participant: Participant){
     return this.http.post<Participant>(PARTICIPANT_API+'addParticipant',participant);
   }
+<<<<<<< HEAD
   
   /*
   addParticipant(idF: any, participant: Participant){
     return this.http.post<Participant>(PARTICIPANT_API+'addParticipant/'+idF,participant);
+=======
+  /*
+  addParticipant(participant: Participant, id: any){
+    return this.http.post<Participant>(PARTICIPANT_API+'addParticipant/'+id,participant);
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
   }
   */
 

@@ -23,7 +23,10 @@ export class InscriptionComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, 
               private participantService: ParticipantService, 
               @Inject(MAT_DIALOG_DATA) public editData: any,
+<<<<<<< HEAD
               @Inject(MAT_DIALOG_DATA) public data: any,
+=======
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
               private dialogRef: MatDialogRef<InscriptionComponent>,
               private route: ActivatedRoute) { }
 
@@ -37,13 +40,17 @@ export class InscriptionComponent implements OnInit {
       ville:['',Validators.required],
       //formation:['',Validators.required],
     })
+<<<<<<< HEAD
     alert(this.data.id);
+=======
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
     this.participantService.getFormationList().subscribe({next:(res)=>{this.formations = res}});
 
 
   }
 
 
+<<<<<<< HEAD
 
   addParticipant(){
       let partRequest=new Participant();
@@ -73,18 +80,30 @@ export class InscriptionComponent implements OnInit {
 /*
   addParticipant(idF:any){
     this.participantService.addParticipant(idF,this.registerForm.value).subscribe({
+=======
+/*
+  addParticipant(id:number){
+    this.participantService.addParticipant(this.registerForm.value,id).subscribe({
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
       next:(res)=>{
         alert("Thème mis à jour avec succès");
       },
       error:()=>{
         alert("Erreur lors de la mise à jour du thème")
+<<<<<<< HEAD
         console.log("id : "+ idF);
         console.log("info : "+ this.registerForm.value);
+=======
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
       }
     })
   }
 
+<<<<<<< HEAD
   
+=======
+  */
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
   addParticipant() {
       if(this.registerForm.valid){
         let partRequest=new Participant();

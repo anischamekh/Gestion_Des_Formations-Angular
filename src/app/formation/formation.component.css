@@ -39,7 +39,11 @@
       transform: translate(-50%, -50%);
   }
   .example-button-row {
+<<<<<<< HEAD
     padding-left: 1100px;
+=======
+    padding-left: 1150px;
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
   }
   
   .mat-form-field {

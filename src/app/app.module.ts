@@ -59,7 +59,10 @@ import { AttachementComponent } from './attachement/attachement.component';
 import { SalonComponent } from './salon/salon.component';
 import { AttachementDialogComponent } from './attachement-dialog/attachement-dialog.component';
 import { EvaluationListComponent } from './evaluation-list/evaluation-list.component';
+<<<<<<< HEAD
 import { FileUploadComponent } from './file-upload/file-upload.component';
+=======
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
 
 
 
@@ -96,8 +99,12 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     AttachementComponent,
     SalonComponent,
     AttachementDialogComponent,
+<<<<<<< HEAD
     EvaluationListComponent,
     FileUploadComponent
+=======
+    EvaluationListComponent
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
   ],
   imports: [
     BrowserModule,

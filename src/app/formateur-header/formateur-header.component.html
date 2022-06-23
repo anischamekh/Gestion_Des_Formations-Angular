@@ -7,15 +7,26 @@
         <ul class="row m-0 align-items-center">
           <li>
             <button mat-button [matMenuTriggerFor]="menu" class="user mt-2 d-flex align-items-center" id="btn" >
+<<<<<<< HEAD
              
+=======
+              <img src="assets/logo.png" alt="" class="user-image mr-1 p-2" />
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
                   {{ currentUser.firstName }} {{ currentUser.lastName }}
               <mat-icon class="user-image-icon ml-1">keyboard_arrow_down</mat-icon>
             </button>
             <mat-menu #menu="matMenu">
+<<<<<<< HEAD
               <!--<a href class="nav-link" routerLink="/profile" mat-menu-item >
                 <mat-icon>account_box</mat-icon>
                 Profile
               </a>-->
+=======
+              <a href class="nav-link" routerLink="/profile" mat-menu-item >
+                <mat-icon>account_box</mat-icon>
+                Profile
+              </a>
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
               <a href class="nav-link" (click)="logout()" mat-menu-item >
                 <mat-icon>exit_to_app</mat-icon>
                 Logout

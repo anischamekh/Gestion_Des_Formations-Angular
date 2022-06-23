@@ -17,9 +17,12 @@ import { EvaluationComponent } from './evaluation/evaluation.component';
 import { AttachementComponent } from './attachement/attachement.component';
 import { FormateurFormationComponent } from './formateur-formation/formateur-formation.component';
 import { EvaluationListComponent } from './evaluation-list/evaluation-list.component';
+<<<<<<< HEAD
 import { SalonComponent } from './salon/salon.component';
 import { RegisterComponent } from './register/register.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+=======
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
 
 
 const routes: Routes = [
@@ -40,9 +43,13 @@ const routes: Routes = [
   { path: 'evaluation', component: EvaluationComponent },
   { path: 'evaluation-list', component: EvaluationListComponent },
   { path: 'formation-formateur', component: FormateurFormationComponent },
+<<<<<<< HEAD
   { path: 'attachement', component: AttachementComponent },
   { path: 'salon/:lien', component: SalonComponent },
   { path: 'file-upload', component: FileUploadComponent }
+=======
+  { path: 'attachement', component: AttachementComponent }
+>>>>>>> 81aebaa8e5ea75bbe494af581c20b1c653bd3704
 ];
 
 @NgModule({
