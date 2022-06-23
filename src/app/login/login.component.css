@@ -26,12 +26,15 @@
 		border-top-left-radius:20px;
 		border-bottom-left-radius:20px;
 	}
+	
 }
 @media screen and (min-width: 642px) and (max-width:800px){
 	.main-content{width: 70%;}
 }
-.row > h2{
+.row > h1{
 	color:#008080;
+	font-size: 30px;
+	padding-left: 80px;
 }
 .login_form{
 	background-color: #fff;
@@ -39,6 +42,7 @@
 	border-bottom-right-radius:20px;
 	border-top:1px solid #ccc;
 	border-right:1px solid #ccc;
+	padding-left: 15%;
 }
 form{
 	padding: 0 2em;
@@ -53,6 +57,7 @@ form{
 	outline:none;
 	margin:1.5em auto;
 	transition: all .5s ease;
+	text-align: center;
 }
 .form__input:focus{
 	border-bottom-color: #008080;
@@ -60,7 +65,6 @@ form{
 	border-radius: 4px;
 }
 .btn{
-	transition: all .5s ease;
 	width: 70%;
 	border-radius: 30px;
 	color:#008080;
@@ -69,6 +73,7 @@ form{
 	border: 1px solid #008080;
 	margin-top: 1.5em;
 	margin-bottom: 1em;
+	padding-left: 20px;
 }
 .btn:hover, .btn:focus{
 	background-color: #008080;

@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { ParticipantService } from '../_services/participant.service';
+import { MailService } from '../_services/mail.service';
 
 @Component({
   selector: 'app-participants',
@@ -12,13 +13,13 @@ import { ParticipantService } from '../_services/participant.service';
 export class ParticipantsComponent implements OnInit {
 
   sideBarOpen = true;
-  displayedColumns:String[]  = ['cin','email','firstName','lastName','tel','ville','formation'];
+  displayedColumns:String[]  = ['cin','email','firstName','lastName','tel','ville','formation','lienF','eval'];
   dataSource!: MatTableDataSource<any>;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private participantService: ParticipantService ) { }
+  constructor(private participantService: ParticipantService ,private mailService: MailService) { }
 
   ngOnInit(): void {
     this.getParticipantsList();
@@ -35,6 +36,35 @@ export class ParticipantsComponent implements OnInit {
     },
     error:(err)=>{alert("Erreur lors de la récupération des formateurs")}
   })
+  }
+
+  sendFormation(idP: number,idF: number){
+    this.mailService.sendFormation(idP,idF)
+    .subscribe({
+      next:(res)=>{
+        console.log('this.user.id  ***'+idP+' '+idF)
+        alert("Mail envoyée avec succès");
+      },
+      error:()=>{
+        console.log('this.user.id  ***'+idP+' '+idF)
+        alert("Mail envoyée avec succès");
+      }
+    })
+  }
+
+
+  sendEvaluation(id: number){
+    this.mailService.sendEvaluation(id)
+    .subscribe({
+      next:(res)=>{
+        console.log('this.user.id  ***'+id)
+        alert("Mail envoyée avec succès");
+      },
+      error:()=>{
+        console.log('this.user.id  ***'+id)
+        alert("Mail envoyée avec succès");
+      }
+    })
   }
 
   applyFilter(event: Event) {

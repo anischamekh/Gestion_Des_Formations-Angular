@@ -102,7 +102,23 @@ export class FormationDialogComponent implements OnInit {
 
           
           public updateFormation(){
-            this.formationService.putFormation(this.formationForm.value,this.editData.id).subscribe({
+
+            let fortRequest=new Formation();
+                fortRequest.titre=this.formationForm.get('titre')?.value;
+                fortRequest.description=this.formationForm.get('description')?.value;
+                fortRequest.dateDebut=this.formationForm.get('dateDebut')?.value;
+                fortRequest.dateFin=this.formationForm.get('dateFin')?.value;
+                fortRequest.duree=this.formationForm.get('duree')?.value;
+                fortRequest.lien=this.formationForm.get('lien')?.value;
+                fortRequest.image=this.formationForm.get('image')?.value;
+                let them=new Theme();
+                them.id=this.formationForm.get('theme')?.value;
+                fortRequest.theme=them;
+                let format =new User();
+                format.id=this.formationForm.get('formateur')?.value;
+                fortRequest.user=format;
+
+            this.formationService.putFormation(fortRequest,this.editData.id).subscribe({
               next:(res)=>{
                 alert("Formation mis à jour avec succès");
                 this.formationForm.reset();

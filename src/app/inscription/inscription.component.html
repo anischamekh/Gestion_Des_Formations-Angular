@@ -1,6 +1,6 @@
-<h1 mat-dialog-title>Ajouter un formateur</h1>
+<h1 mat-dialog-title>Inscription</h1>
 <div mat-dialog-content>
-    <form [formGroup]="registerForm" >
+    <form *ngIf='registerForm' [formGroup]="registerForm" >
         <mat-form-field appearance="outline">
             <mat-label>CIN</mat-label>
             <input formControlName="cin"  type="text" id="cin" name="cin" matInput placeholder="CIN"/>

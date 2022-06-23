@@ -1,0 +1,22 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-formateur-sidenav></app-formateur-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-formateur-header (toggleSidebarForMe)="sideBarToggler()"></app-formateur-header>
+
+      <div class="container-fluid page">
+        <div class="d-flex page__box p-3 mt-2">Liste des emails
+          <div class="example-button-row"> 
+          </div>
+        </div>
+        </div>
+        
+        <div class="page__content shadow p-3 position-relative">
+           
+          {{formation.lien}}
+        </div>
+    </mat-drawer-content>
+ 
+
+  </mat-drawer-container>

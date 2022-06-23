@@ -39,7 +39,7 @@
       transform: translate(-50%, -50%);
   }
   .example-button-row {
-    padding-left: 950px;
+    padding-left: 1170px;
   }
   
   .example-spacer{
@@ -56,5 +56,5 @@
   }
 
 td, th{
-  width: 45.5%;
+  width: 46.2%;
 }

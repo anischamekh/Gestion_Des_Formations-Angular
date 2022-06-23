@@ -33,6 +33,7 @@ export class FormationDetailComponent implements OnInit {
   openDialog(id: number) {
     this.dialog.open(InscriptionComponent, {
       width:'30%',
+      data: {id}
     }),console.log(id)
   }
 

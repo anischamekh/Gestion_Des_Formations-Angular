@@ -59,7 +59,7 @@
 
                 <ng-container matColumnDef="image">
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> Image </th>
-                  <td mat-cell *matCellDef="let row"><img src="{{row.image}}" height="80px"></td>
+                  <td mat-cell *matCellDef="let row"><img src="{{row.image}}" id="image"></td>
                 </ng-container>
             
                 <ng-container matColumnDef="lien">
@@ -80,7 +80,6 @@
                 <ng-container matColumnDef="action">
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
                   <td mat-cell *matCellDef="let row">
-                    <button mat-icon-button color="primary" (click)="sendMail()"><mat-icon>send</mat-icon></button>
                     <button mat-icon-button color="primary" (click)="editFormation(row)"><mat-icon>edit</mat-icon></button>
                     <button mat-icon-button color="warn" (click)="deleteFormation(row.id)"><mat-icon>delete</mat-icon></button>
                     

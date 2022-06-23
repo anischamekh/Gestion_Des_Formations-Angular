@@ -35,7 +35,7 @@ export class HeaderComponent implements OnInit {
 
   logout(): void {
     this.tokenStorageService.signOut();
-    
+    this.router.navigate(['/login']);
   }
   toggleSidebar() {
     this.toggleSidebarForMe.emit();

@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Ajouter une formation</h1>
+<div mat-dialog-content>
+    <form [formGroup]="docForm" enctype="multipart/form-data">
+        <mat-form-field appearance="outline">
+            <mat-label>Titre de la formation</mat-label>
+                <mat-select formControlName="formation" name="formation">
+                <mat-option *ngFor="let formation of formations" [value]="formation.id" >
+                    {{formation.titre}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <!--<mat-label>Document</mat-label>
+            <ngx-mat-file-input formControlName="fileData" id="fileData" name="fileData" (change)="onFileRectoChange($event)" matInput placeholder="Document"></ngx-mat-file-input>-->
+            <label class="btn btn-default p-0 mobile-upload">
+                <ngx-mat-file-input type="file" formControlName="fileData" 
+                       (change)="onFileRectoChange($event)" style="display: contents;"></ngx-mat-file-input>
+              </label>
+        </mat-form-field>
+        
+    </form>
+</div>
+<div mat-dialog-actions [align]="'end'">
+    <button mat-raised-button color="warn" mat-dialog-close>Annuler</button>
+    <button style="margin-left: 8px;" mat-raised-button color="primary" mat-dialog-close (click)="addFile()" >Ajouter</button>
+</div>

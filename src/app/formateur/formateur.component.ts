@@ -7,12 +7,16 @@ import { MatSort, MatSortModule } from '@angular/material/sort';
 import { Observable } from 'rxjs';
 import { FormateurDialogComponent } from '../formateur-dialog/formateur-dialog.component';
 import { FormateurService } from '../_services/formateur.service';
+import { MailService } from '../_services/mail.service';
+import { User } from '../_models/User';
 @Component({
   selector: 'app-formateur',
   templateUrl: './formateur.component.html',
   styleUrls: ['./formateur.component.css']
 })
 export class FormateurComponent implements OnInit {
+
+  user: User = new User();
 
   sideBarOpen = true;
   displayedColumns:String[]  = ['email','firstName','lastName','username','password','action'];
@@ -21,7 +25,7 @@ export class FormateurComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private dialog: MatDialog, private formateurService: FormateurService ) { }
+  constructor(private dialog: MatDialog, private formateurService: FormateurService, private mailService: MailService) { }
 
   ngOnInit(): void {
     this.getFormateurList();
@@ -53,8 +57,22 @@ export class FormateurComponent implements OnInit {
     })
   }
 
+  sendUser(id: number){
+    this.mailService.sendUser(id)
+    .subscribe({
+      next:(res)=>{
+        console.log('this.user.id  ***'+id)
+        alert("Mail envoyée avec succès");
+      },
+      error:()=>{
+        console.log('this.user.id  ***'+id)
+        alert("Mail envoyée avec succès");
+      }
+    })
+  }
+
   public getFormateurList(){
-    this.formateurService.getFormateurList().subscribe({next:(res)=>{
+      this.formateurService.getFormateurList().subscribe({next:(res)=>{
       this.dataSource = new MatTableDataSource(res);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;

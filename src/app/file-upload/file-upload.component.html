@@ -1,0 +1,58 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <!-- <mat-drawer mode="side" opened="true"> -->
+    <app-formateur-sidenav></app-formateur-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-formateur-header (toggleSidebarForMe)="sideBarToggler()"></app-formateur-header>
+    
+
+    <div class="container-fluid page">
+      <div class="d-flex page__box p-3 mt-2">Documents
+        <div class="example-button-row"> 
+          <div class="row">
+            <div class="col-8">
+              <label class="btn btn-default p-0">
+                <input type="file" (change)="selectFile($event)" />
+              </label>
+            </div>
+            <div class="col-4">
+              <button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload()">
+                Importer
+              </button>
+            </div>
+          </div>
+          <div *ngIf="message" class="alert alert-secondary" role="alert">{{ message }}</div>
+          
+          <div *ngIf="currentFile" class="progress my-3">
+            <div
+              class="progress-bar progress-bar-info progress-bar-striped"
+              role="progressbar"
+              attr.aria-valuenow="{{ progress }}"
+              aria-valuemin="0"
+              aria-valuemax="100"
+              [ngStyle]="{ width: progress + '%' }"
+            >
+              {{ progress }}%
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="page__content shadow p-3 position-relative">
+      <div class="card mt-3">
+        <div class="card-header text-center">Liste des Documents</div>
+        <ul
+          class="list-group list-group-flush"
+          *ngFor="let file of fileInfos | async"
+        >
+          <li class="list-group-item">
+            <a href="{{ file.url }}">{{ file.name }}</a>
+          </li>
+        </ul>
+      </div>
+      </div>
+
+
+  </mat-drawer-content>
+</mat-drawer-container>

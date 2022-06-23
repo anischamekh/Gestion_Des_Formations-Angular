@@ -20,39 +20,62 @@
                 <mat-label>Filter</mat-label>
                 <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
               </mat-form-field>
-              <table mat-table #table [dataSource]="dataSource" matSort aria-label="Elements">
+              <table mat-table #table [dataSource]="dataSource" matSort aria-label="Elements" >
   
                 <ng-container matColumnDef="email">
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> E-mail </th>
-                  <td mat-cell *matCellDef="let row"> {{row.email}} </td>
-                </ng-container>
+                  <td mat-cell *matCellDef="let row" > {{row.email}} 
+                    <!--<ng-container  *ngIf="row.email != 'gestion.formation2022@gmail.com'">
+                      {{row.email}} 
+                    </ng-container>-->
+                    </td>
+                  </ng-container>
             
-                <ng-container matColumnDef="firstName">
+                <ng-container matColumnDef="firstName" >
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom </th>
-                  <td mat-cell *matCellDef="let row"> {{row.firstName}} </td>
+                  
+                  <td mat-cell *matCellDef="let row">{{row.firstName}} 
+                    <!--<ng-container  *ngIf="row.firstName != 'admin'">
+                      {{row.firstName}} 
+                    </ng-container>-->
+                  </td>
                 </ng-container>
   
-                <ng-container matColumnDef="lastName">
+                <ng-container matColumnDef="lastName" >
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> Prénom </th>
-                  <td mat-cell *matCellDef="let row"> {{row.lastName}} </td>
+                  <td mat-cell *matCellDef="let row"> {{row.lastName}} 
+                    <!--<ng-container  *ngIf="row.lastName != 'admin'">
+                      {{row.lastName}} 
+                    </ng-container>-->
+                    </td>
                 </ng-container>
             
-                <ng-container matColumnDef="username">
+                <ng-container matColumnDef="username" >
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> Nom d'utilisateur </th>
-                  <td mat-cell *matCellDef="let row"> {{row.username}} </td>
+                  
+                  <td mat-cell *matCellDef="let row"> {{row.username}} 
+                    <!--<ng-container  *ngIf="row.username != 'admin'">
+                      {{row.username}} 
+                    </ng-container>-->
+                  </td>
                 </ng-container>
   
-                <ng-container matColumnDef="password">
+                <ng-container matColumnDef="password" >
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> Password </th>
-                  <td mat-cell *matCellDef="let row"> {{row.password}} </td>
+                  <td mat-cell *matCellDef="let row"> {{row.password}}
+                    <!--<ng-container  *ngIf="row.password != 'admin123'">
+                      {{row.password}} 
+                    </ng-container>-->
+                  </td>
                 </ng-container>
             
   
                 <ng-container matColumnDef="action">
                   <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
                   <td mat-cell *matCellDef="let row">
+                    <button mat-icon-button color="primary" (click)="sendUser(row.id)" *ngIf="row.password != 'admin123'"><mat-icon>send</mat-icon></button>
                     <button mat-icon-button color="primary" (click)="editFormateur(row)"><mat-icon>edit</mat-icon></button>
-                    <button mat-icon-button color="warn" (click)="deleteFormateur(row.id)"><mat-icon>delete</mat-icon></button>
+                    <button mat-icon-button color="warn" (click)="deleteFormateur(row.id)" *ngIf="row.password != 'admin123'"><mat-icon>delete</mat-icon></button>
                 </ng-container>
   
                 

@@ -49,8 +49,10 @@
             <mat-label>Selectionner un formateur</mat-label>
                 <mat-select formControlName="formateur" name="formateur">
                 <mat-option *ngFor="let user of users" [value]="user.id">
+                <ng-container *ngIf="user.firstName != 'admin' || user.lastName != 'admin'">
                     {{user.firstName}}
                     {{user.lastName}}
+                </ng-container>
                 </mat-option>
             </mat-select>
           </mat-form-field>

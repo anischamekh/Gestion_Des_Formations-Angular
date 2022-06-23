@@ -5,19 +5,17 @@
       <div class="a7 ae">
         <div class="a1L aB[570px] a1M wow fadeInUp" data-wow-delay=".2s">
           <h1 class="a1A dark:aI a1g a1O sm:a1P md:a3D a2D sm:a2D md:a2D a2v">
-            Startup Focused Angular + Tailwind CSS Template
+            Centre National de l'Informatique <br>(CNI) 
           </h1>
           <p class="a1R a1T md:a27 a1U md:a1U a1S dark:aI dark:a3E a2s">
-            A Complete Tailwind CSS Web Template Crafted for - Startup,
-            SaaS, Business, Software and Agencies. Comes with high-quality
-            design and everything you need!
+            Le Centre National de l'Informatique présente une application de gestion des formations a distance
           </p>
           <div class="a8 a9 a1x">
-            <a href="#features" class="aH a2P aI a1k a3q a1l hover:a2i a3F a13 a1p a1a a2j">
-              Get Started
+            <a href="#blog" class="aH a2P aI a1k a3q a1l hover:a2i a3F a13 a1p a1a a2j">
+              Nos Formations
             </a>
             <a href="#about" class="aH a2P a1A a1 a29 dark:aI dark:aw dark:a29 a3q a1l hover:a3G dark:hover:a3G a3F a13 a1p a1a a2j">
-              Learn More
+              Plus de Détails
             </a>
           </div>
         </div>
@@ -129,6 +127,72 @@
   </div>
 </section>
 
+
+
+
+
+
+<section id="blog"  class="a1k a3g[3%] a1I[100px] a1J[120px]">
+  <div class="aa">
+    <div class="a8 a1K ab[-16px]">
+      <div class="a7 ae">
+        <div class="a1L aB[570px] a1M a3s[100px] wow fadeInUp" data-wow-delay=".1s">
+          <h2 class="a1A dark:aI a1g a1O sm:a1P md:a24[45px] a1Q">
+            NOS FORMATIONS
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="a8 a1K ab[-16px] a1x">
+      <div class="a7 md:aU/3 lg:a1_/2 xl:a1_/3 ae text-center"  *ngFor="let formation of formations; let i = index">
+        <div class="ad aw dark:av a33 a13 a2p a1V wow fadeInUp h-full" id="card" *ngIf="i < 6">
+            <!--<span class="a3 a34 a35 a1k a1w aM a9 a1x aK ae a2P a1b aI">
+              {{formation.etat}}
+            </span>-->
+            <img src={{formation.image}} alt="image" class="a7" />
+          <div class="a36 sm:a2Y md:ai md:az lg:a2Y xl:ai xl:a37 2xl:a2Y">
+              <h3 class="a1g a1A dark:aI a27 sm:a2u ah a1Q">
+                {{formation.titre}}
+            </h3>
+            <p class="aH a1S a1R a38 a2E a2B a2z a2M dark:a2o dark:a2M">
+              {{formation.duree}} Heures
+            </p>
+            <div class="a8 a9">
+              <div class="a8 a9 a39 a2O xl:a3a 2xl:a39 xl:a2A 2xl:a2O a3b a2z a2M dark:a2o dark:a2M">
+                <div class="a20">
+                  <h4 class="a1b a1R a1h dark:aI a2K text-center">
+                    De:
+                  </h4>
+                  <h4 class="a1b a1R a1h dark:aI a2K">
+                    Jusqu'au:
+                  </h4>
+                </div>
+              </div>
+              <div class="a37">
+                <h4 class="a1b a1R a1h dark:aI a2K">
+                  {{formation.dateDebut}}
+                </h4>
+                <h4 class="a1b a1R a1h dark:aI a2K">
+                  {{formation.dateFin}}
+                </h4>
+              </div>
+              <div class="a39">
+                <button type="button" class="btn btn-primary pull-right" id="pd" [routerLink]="['/formation-details', formation.id]">Plus de détails</button>
+              </div>
+            </div>
+            
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+    <div class="text-center">
+    <button type="button" class="btn btn-danger btn-lg rounded-pill" id="vp" [routerLink]="['/formation-list']">Voir plus</button>
+      </div>
+  </div>
+</section>  
 
 
 
@@ -350,7 +414,7 @@
 </section>
 
 
-<section class="a1k a3g[3%] a1I[100px] a1J[120px]">
+<section class="a1k a3g[3%] a1I[100px] a1J[120px]" id="propos">
   <div class="aa">
     <div class="a8 a1K a9 ab[-16px]">
       <div class="a7 lg:a1_/2 ae">
@@ -361,30 +425,11 @@
       <div class="a7 lg:a1_/2 ae">
         <div class="aB[470px] wow fadeInUp" data-wow-delay=".2s">
           <div class="a1N">
-            <h3 class="a1g a1A dark:aI a27 sm:a2u lg:a27 xl:a2u a1Q">
-              Bug free code
-            </h3>
+            <h2 class="a1A dark:aI a1g a1O sm:a1P md:a24[45px] lg:a1P xl:a24[45px] a2D sm:a2D md:a2D lg:a2D xl:a2D a2E">
+              A PROPOS DU CNI
+            </h2>
             <p class="a1S aH sm:a1T a1U sm:a1U a1R">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-              do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-          </div>
-          <div class="a1N">
-            <h3 class="a1g a1A dark:aI a27 sm:a2u lg:a27 xl:a2u a1Q">
-              Premier support
-            </h3>
-            <p class="a1S aH sm:a1T a1U sm:a1U a1R">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-              do eiusmod tempor incididunt.
-            </p>
-          </div>
-          <div class="a2K">
-            <h3 class="a1g a1A dark:aI a27 sm:a2u lg:a27 xl:a2u a1Q">
-              Regular updates
-            </h3>
-            <p class="a1S aH sm:a1T a1U sm:a1U a1R">
-              Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt
-              consectetur adipiscing elit setim.
+              Le Centre National de l’Informatique est un établissement public à caractère non administratif doté de la personnalité civile et de l’autonomie financière.<br> Le CNI est un organisme placé sous la tutelle du Ministre des Technologies de la Communication, et opérant dans les domaines du secteur de l’informatique et des technologies de la communication et certifié ISO 9001version 2015.
             </p>
           </div>
         </div>
@@ -399,61 +444,7 @@
 
 
 
-<section id="blog"  class="a1k a3g[3%] a1I[100px] a1J[120px]">
-  <div class="aa">
-    <div class="a8 a1K ab[-16px]">
-      <div class="a7 ae">
-        <div class="a1L aB[570px] a1M a3s[100px] wow fadeInUp" data-wow-delay=".1s">
-          <h2 class="a1A dark:aI a1g a1O sm:a1P md:a24[45px] a1Q">
-            NOS FORMATIONS
-          </h2>
-        </div>
-      </div>
-    </div>
 
-    <div class="a8 a1K ab[-16px] a1x">
-      <div class="a7 md:aU/3 lg:a1_/2 xl:a1_/3 ae text-center"  *ngFor="let formation of formations; let i = index">
-        <div class="ad aw dark:av a33 a13 a2p a1V wow fadeInUp h-full" id="card" *ngIf="i < 6">
-            <span class="a3 a34 a35 a1k a1w aM a9 a1x aK ae a2P a1b aI">
-              {{formation.etat}}
-            </span>
-            <img src={{formation.image}} alt="image" class="a7" />
-          <div class="a36 sm:a2Y md:ai md:az lg:a2Y xl:ai xl:a37 2xl:a2Y">
-              <h3 class="a1g a1A dark:aI a27 sm:a2u ah a1Q">
-                {{formation.titre}}
-            </h3>
-            <p class="aH a1S a1R a38 a2E a2B a2z a2M dark:a2o dark:a2M">
-              {{formation.duree}} Heurs
-            </p>
-            <div class="a8 a9">
-              <div class="a8 a9 a39 a2O xl:a3a 2xl:a39 xl:a2A 2xl:a2O a3b a2z a2M dark:a2o dark:a2M">
-                <div class="a39">
-                  <h4 class="a1b a1R a1h dark:aI a2K">
-                    Date Debut
-                  </h4>
-                  <p class="a3c a1S">{{formation.dateDebut}}</p>
-                </div>
-              </div>
-              <div class="a39">
-                <h4 class="a1b a1R a1h dark:aI a2K">
-                  Date Fin
-                </h4> 
-                <p class="a3c a1S">{{formation.dateFin}}</p>
-              </div>
-              <div class="a39">
-                <button type="button" class="btn btn-primary pull-right" id="pd" [routerLink]="['/formation-details', formation.id]">Plus de détails</button>
-              </div>
-            </div>
-            
-          </div>
-          
-        </div>
-      </div>
-      <button type="button" class="btn btn-danger btn-lg rounded-pill" id="vp" [routerLink]="['/formation-list']">Voir plus</button>
-
-    </div>
-  </div>
-</section>  
 
 
 <app-home-footer></app-home-footer>

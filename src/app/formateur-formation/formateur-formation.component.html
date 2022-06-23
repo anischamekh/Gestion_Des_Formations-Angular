@@ -1,0 +1,68 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <app-formateur-sidenav></app-formateur-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+        <app-formateur-header (toggleSidebarForMe)="sideBarToggler()"></app-formateur-header>
+  
+      <div class="container-fluid page">
+        <div class="d-flex page__box p-3 mt-2">Liste des formations
+        </div>
+        </div>
+        
+        <div class="page__content shadow p-3 position-relative">
+
+        <div class="aa">
+            <div class="a8 a1K ab[-16px] a1x" >
+                <div class="a7 md:aU/3 lg:a1_/2 xl:a1_/3 ae" *ngFor="let formation of formations | paginate: { itemsPerPage: 3, currentPage: page, totalItems: totalLength }">
+                  <ng-container *ngIf="this.currentUser.firstName == this.formation.user.firstName">
+                  <div class="ad aw dark:av a33 a13 a2p a1V wow fadeInUp outline-black" data-wow-delay=".1s" >
+                      <!--<span class="a3 a34 a35 a1k a1w aM a9 a1x aK ae a2P a1b aI">
+                        {{formation.etat}}
+                      </span>-->
+                      <img src={{formation.image}} alt="image" class="a7" />
+                    <div class="a36 sm:a2Y md:ai md:az lg:a2Y xl:ai xl:a37 2xl:a2Y">
+                        <h3 class="a1g a1A dark:aI a27 sm:a2u ah a1Q">
+                          {{formation.titre}}
+                      </h3>
+                      <p class="aH a1S a1R a38 a2E a2B a2z a2M dark:a2o dark:a2M">
+                        {{formation.duree}} Heurs
+                      </p>
+                      <div class="a8 a9">
+                        <div class="a8 a9 a39 a2O xl:a3a 2xl:a39 xl:a2A 2xl:a2O a3b a2z a2M dark:a2o dark:a2M">
+                          <div class="a20">
+                            <h4 class="a1b a1R a1h dark:aI a2K text-center">
+                              De:
+                            </h4>
+                            <h4 class="a1b a1R a1h dark:aI a2K">
+                              Jusqu'au:
+                            </h4>
+                          </div>
+                        </div>
+                        <div class="a37">
+                          <h4 class="a1b a1R a1h dark:aI a2K">
+                            {{formation.dateDebut}}
+                          </h4>
+                          <h4 class="a1b a1R a1h dark:aI a2K">
+                            {{formation.dateFin}}
+                          </h4>
+                        </div>
+                        <div class="a39">
+                          <a href="{{formation.lien}}" type="button" class="btn btn-primary pull-right" id="pd">Lancer</a>
+                        </div>
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+                </ng-container>
+                </div>
+                </div>
+                <pagination-controls class="text-center my-pagination" (pageChange)="page = $event"></pagination-controls>
+            </div>
+          
+        </div>
+    </mat-drawer-content>
+  
+  
+  </mat-drawer-container>

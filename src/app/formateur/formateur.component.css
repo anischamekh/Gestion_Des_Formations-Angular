@@ -39,7 +39,7 @@
       transform: translate(-50%, -50%);
   }
   .example-button-row {
-    padding-left: 900px;
+    padding-left: 1100px;
   }
   
   .mat-form-field {
@@ -64,6 +64,6 @@
   }
 
 td, th{
-  width: 18%;
+  width: 17.5%;
 }
   
